@@ -25,14 +25,13 @@ Added some new features:
 **Example of usage**
 
 
-Example of txt file of the Labyrinth:
+Example of txt and html files of the Labyrinth:
+
 
 <img width="225" alt="Знімок екрана 2024-09-22 о 20 45 15" src="https://github.com/user-attachments/assets/e8c0690c-1db0-47b1-86f3-d4825cb481a4">
 
+<img width="527" alt="Знімок екрана 2024-09-22 о 20 45 49" src="https://github.com/user-attachments/assets/61217e0d-4a4d-43ba-954e-2be5cb6ebec1">
 
-Example of html file of the Labyrinth:
-
-<img width="579" alt="Знімок екрана 2024-09-22 о 20 45 49" src="https://github.com/user-attachments/assets/d130d23a-f484-4eff-a8ac-a860abad486c">
 
 Example of the result in the console:
 
