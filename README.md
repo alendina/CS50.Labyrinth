@@ -6,8 +6,8 @@ Build the Labyrinth and find the solution using BFS (Breadth-First Search) or DF
 Contain basic opportunities:
 
   - to generate the Labyrinth with walls, tunnels, start point, finish point;
-  - to write in a specific text file with the Labyrinth using the automation generation of the file name;
-  - to find the solution to the Labyrinth using BFS (Breadth-First Search) or DFS (Deep-First Search). Show the path from the start point to the finish point, necessary steps and discovered nodes;
+  - to write in a special text file with the Labyrinth using the automation generation of the file name;
+  - to find the solution to the Labyrinth using BFS (Breadth-First Search) or DFS (Deep-First Search) methods. Show the path from the start point to the finish point, necessary steps and discovered nodes;
   - to read the Labyrinth from a specific text file without generation
   - to write the solution of the Labyrinth in a specific text file and an HTML file
 
@@ -28,6 +28,12 @@ Python 3 is needed for running this Labyrinth project
 **The SolveLabyrinth.py module**
 
 Running the SolveLabyrinth.py module allows:
+
+- to generate the Labyrinth with walls, tunnels, the start point, and the finish point with the different probability for  symbols "walls" and "tunnels" used  during the generation;
+- or to read the Labyrinth from a special txt file created earlier from the current folder; 
+- to write the generated Labyrinth in a special text file by using an automatic generic file name or fixed file name to the current folder;
+- To find the solution to the Labyrinth using BFS (Breadth-First Search) or DFS (Deep-First Search) methods. Allow to show the path from the start point to the finish point, necessary steps, and discovered nodes;
+- to write the solution of the Labyrinth in a specific HTML file
 
 The SolveLabyrinth.py module contains some constants to control the running modes:
 
