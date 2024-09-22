@@ -21,31 +21,33 @@ Added some new features:
     PROBABILITIES (to set the probability of "walls" and "tunnels" during the Labyrinth generation);
     BASIC_PART_FILENAME (to set the basic part of txt and html file name)
 
-# HOW TO USE
+# How to use
 
 Python 3 is needed for running this Labyrinth project 
 
-**SolveLabyrinth.py**
+**The SolveLabyrinth.py module**
 
-Runing SolveLabyrinth.py file allows:
+Running the SolveLabyrinth.py module allows:
 
-SolveLabyrinth.py contains some constants for control the running modes:
+The SolveLabyrinth.py module contains some constants to control the running modes:
 
-**METOD**: (value: "DFS" or "BFS")
-**CRETE_HTML**: (value: True or False )
-**NEW_FILE**: (value: True or False )
-**CLEAN_LABYRINTH**: (value: True or False )
-**FILE_NAME** = (value: string, for example "Labyrinth01.txt")
-**BASIC_PART_FILENAME**: (value: string, for example "Labyrinth")
-**LABYRINTH_WIDTH**: (value: number)
-**LABYRINTH_HIGHT**: (value: number)
-**PROBABILITIES**: (value: set, for example [0.4, 0.6, 0, 0, 0, 0]) # the same length as the number of LABYRINTH_SYMBOLS
-**LABYRINTH_SYMBOLS**: (value: dictionary, for example {"wall":"#", "tunnel":" ", "start":"A", "finish":"B", "pass_finish":"*", "pass_all":"."}
-**LABYRINTH_HTML_COLOR**: (value: dictionary, for example {"wall":"rgb(182, 180, 180)", "tunnel":"White", "start":"rgb(160, 160, 231)", "finish":"rgb(212, 159, 159)", "pass_finish":"rgb(149, 197, 149)", "pass_all":"rgb(243, 233, 156)"}
+- **METHOD**: (value: "DFS" or "BFS") sets the search method for finding the way from the start point to the finish point. BFS (Breadth-First Search) or DFS (Deep-First Search) methods are available;
+- **CRETE_HTML**: (value: True or False ) the True value sets creating html file with Labyrinth that is based on the appropriate txt file;
+- **NEW_FILE**: (value: True or False ) the True value sets generation of the new Labyrinth; False value sets reading the Labyrinth from the special txt file with a name from the FILE_NAME constant;
+- **CLEAN_LABYRINTH**: (value: True or False ) the True value sets cleaning a special txt file with the Labyrinth from the previous solution before finding a new solution;
+- **FILE_NAME** = (value: string, for example "" or "Labyrinth01.txt") sets 
+- **BASIC_PART_FILENAME**: (value: string, for example "Labyrinth")
+- **LABYRINTH_WIDTH**: (value: number)
+- **LABYRINTH_HIGHT**: (value: number)
+- **PROBABILITIES**: (value: set, for example [0.4, 0.6, 0, 0, 0, 0]) # the same length as the number of LABYRINTH_SYMBOLS
+- **LABYRINTH_SYMBOLS**: (value: dictionary, for example {"wall":"#", "tunnel":" ", "start":"A", "finish":"B", "pass_finish":"*", "pass_all":"."}
+- **LABYRINTH_HTML_COLOR**: (value: dictionary, for example {"wall":"rgb(182, 180, 180)", "tunnel":"White", "start":"rgb(160, 160, 231)", "finish":"rgb(212, 159, 159)", "pass_finish":"rgb(149, 197, 149)", "pass_all":"rgb(243, 233, 156)"}
 
-**BuildLabyrintWithWay.py**
+The constants value can be changed for diferent needs before running the SolveLabyrinth.py module.
 
-Runing of BuildLabyrintWithWay.py allows repeadly ganerate the Labyrinth at least one way from the start point to the finish point will be find. BuildLabyrintWithWay.py file active uses functions and all settings from SolveLabyrinth.py
+**The BuildLabyrintWithWay.py module**
+
+Running the BuildLabyrintWithWay.py module allows repeatedly generating the Labyrinth as long as at least one way from the start point to the finish point will be found. The BuildLabyrintWithWay.py module actively uses functions and all settings from the SolveLabyrinth.py module.
 
 # Example of usage
 
