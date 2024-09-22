@@ -17,7 +17,7 @@ Add some new fitches:
 
 - Different probability for  "walls" and "tunnels" is used  during the generation;
 - Add constants: 
-    METOD (to choose the generation method BFS or DFS)
-    PROBABILITIES (to set the probability of "walls" and "tunnels" during the Labyrinth generation
+    METOD (to choose the generation method BFS or DFS);
+    PROBABILITIES (to set the probability of "walls" and "tunnels" during the Labyrinth generation;
     BASIC_PART_FILENAME (to set the basic part of txt and html file name)
   
