@@ -10,3 +10,14 @@ Contain basic opportunities:
   - Find the solution to the Labyrinth using BFS (Breadth-First Search) or DFS (Deep-First Search). Show the path from the start point to the finish point, necessary steps and discovered nodes;
   - Can read the Labyrinth from a specific text file without generation
   - Write the solution of the Librarian in a text file and an HTML file
+
+**Version 2.0**
+
+Add some new fitches:
+
+- Different probability for  "walls" and "tunnels" is used  during the generation;
+- Add constants: 
+    METOD (to choose the generation method BFS or DFS)
+    PROBABILITIES (to set the probability of "walls" and "tunnels" during the Labyrinth generation
+    BASIC_PART_FILENAME (to set the basic part of txt and html file name)
+  
