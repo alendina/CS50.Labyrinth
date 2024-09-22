@@ -35,15 +35,15 @@ The SolveLabyrinth.py module contains some constants to control the running mode
 - **CRETE_HTML**: (value: True or False ) the True value sets creating html file with Labyrinth that is based on the appropriate txt file;
 - **NEW_FILE**: (value: True or False ) the True value sets generation of the new Labyrinth; False value sets reading the Labyrinth from the special txt file with a name from the FILE_NAME constant;
 - **CLEAN_LABYRINTH**: (value: True or False ) the True value sets cleaning a special txt file with the Labyrinth from the previous solution before finding a new solution;
-- **FILE_NAME** = (value: string, for example "" or "Labyrinth01.txt") sets 
-- **BASIC_PART_FILENAME**: (value: string, for example "Labyrinth")
-- **LABYRINTH_WIDTH**: (value: number)
-- **LABYRINTH_HIGHT**: (value: number)
-- **PROBABILITIES**: (value: set, for example [0.4, 0.6, 0, 0, 0, 0]) # the same length as the number of LABYRINTH_SYMBOLS
-- **LABYRINTH_SYMBOLS**: (value: dictionary, for example {"wall":"#", "tunnel":" ", "start":"A", "finish":"B", "pass_finish":"*", "pass_all":"."}
-- **LABYRINTH_HTML_COLOR**: (value: dictionary, for example {"wall":"rgb(182, 180, 180)", "tunnel":"White", "start":"rgb(160, 160, 231)", "finish":"rgb(212, 159, 159)", "pass_finish":"rgb(149, 197, 149)", "pass_all":"rgb(243, 233, 156)"}
+- **FILE_NAME** = (value: string, for example "" or "Labyrinth01.txt") the "" or None value is used during the automatic generation of file names with a numeration, the basis is taken from the  BASIC_PART_FILENAME constant; the string value like "Labyrinth01.txt" fixes the name of txt file with the Labyrinth which will be created in the current folder;
+- **BASIC_PART_FILENAME**: (value: string, for example "Labyrinth") sets the basic part of txt and html file names with a numeration;
+- **LABYRINTH_WIDTH**: (value: number) sets the dimension of the Labyrinth width;
+- **LABYRINTH_HEIGHT**: (value: number) sets the dimension of the Labyrinth height;
+- **PROBABILITIES**: (value: set, for example [0.4, 0.6, 0, 0, 0, 0]) sets the probability of symbols from the LABYRINTH_SYMBOLS constant; this probability is used during the Labyrinth generation; the length of the PROBABILY constant must be the same as the length of LABYRINTH_SYMBOLS;
+- **LABYRINTH_SYMBOLS**: (value: dictionary, for example {"wall":"#", "tunnel":" ", "start":"A", "finish":"B", "pass_finish":"*", "pass_all":"."} the set of symbols used during the Labyrinth generation;
+- **LABYRINTH_HTML_COLOR**: (value: dictionary, for example {"wall":"rgb(182, 180, 180)", "tunnel":"White", "start":"rgb(160, 160, 231)", "finish":"rgb(212, 159, 159)", "pass_finish":"rgb(149, 197, 149)", "pass_all":"rgb(243, 233, 156)"}) the set of colors used for html file;
 
-The constants value can be changed for diferent needs before running the SolveLabyrinth.py module.
+The constant value can be changed for different needs before running the SolveLabyrinth.py module.
 
 **The BuildLabyrintWithWay.py module**
 
