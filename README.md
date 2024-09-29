@@ -1,5 +1,5 @@
 # Labyrinth Project
-Build the Labyrinth and find the solution using BFS (Breadth-First Search) or DFS (Deep-First Search)
+Build the Labyrinth in two different ways: Tunnel Method of Generation and Random Method of Generation and find the solution using BFS (Breadth-First Search), DFS (Deep-First Search), ASS (A* Search) Methods
 
 **Version 1.0** 
 
@@ -21,51 +21,71 @@ Added some new features:
     PROBABILITIES (to set the probability of "walls" and "tunnels" during the Labyrinth generation);
     BASIC_PART_FILENAME (to set the basic part of txt and html file name)
 
+**Version 3.0**
+
+Added some new features:
+
+- Add A* Search Method for solving the Labyrinth
+- Add Tunnel Method of the Labyrinth generation
+
+Done a big restructuring of the modules
+
 # How to use
 
 Python 3 is needed for running this Labyrinth project 
 
-**The SolveLabyrinth.py module**
+# Generation
 
-Running the SolveLabyrinth.py module allows:
+**The generate_by_tunnels.py module**
 
-- to generate the Labyrinth with walls, tunnels, the start point, and the finish point with the different probability for  symbols "walls" and "tunnels" used  during the generation;
-- or to read the Labyrinth from a special txt file created earlier from the current folder; 
-- to write the generated Labyrinth in a special text file by using an automatic generic file name or fixed file name to the current folder;
-- To find the solution to the Labyrinth using BFS (Breadth-First Search) or DFS (Deep-First Search) methods. Allow to show the path from the start point to the finish point, necessary steps, and discovered nodes;
-- to write the solution of the Labyrinth in a specific HTML file
+The generate_by_tunnels.py module allows to generate of the Labyrint by combining some random tunnels with 10-15 steps of length. You can control some parameters of the generation by changing the constant value of this module:   
+- you can set the width and height of the Labyrint by **LABYRINTH_WIDTH** and **LABYRINTH_HEIGHT** 
+- you can control the ratio between walls and tunnels of the Labyrint using **PROBABILITIES** = [0.3, 0.7, 0, 0, 0, 0] - sets the probability of symbols from the **LABYRINTH_SYMBOLS** constant (from util module) as wall, tunnel, start, finish, pass_finish, pass_all
+- you can write the generated Labyrinth to a new special txt file (**NEW_FILE** = True, **FILE_NAME** = None or «», **BASE_FILENAME** = «G») with automatically generated numbers like «G02.txt»; or you can rewrite a file that exists  (**NEW_FILE** = False, b = "G01.txt") 
+- you can also create html file set  **CRETE_HTML** = True
 
-The SolveLabyrinth.py module contains some constants to control the running modes:
+**The generate_by_random.py module**
 
-- **METHOD**: (value: "DFS" or "BFS") sets the search method for finding the way from the start point to the finish point. BFS (Breadth-First Search) or DFS (Deep-First Search) methods are available;
-- **CRETE_HTML**: (value: True or False ) the True value sets creating html file with Labyrinth that is based on the appropriate txt file;
-- **NEW_FILE**: (value: True or False ) the True value sets generation of the new Labyrinth; False value sets reading the Labyrinth from the special txt file with a name from the FILE_NAME constant;
-- **CLEAN_LABYRINTH**: (value: True or False ) the True value sets cleaning a special txt file with the Labyrinth from the previous solution before finding a new solution;
-- **FILE_NAME** = (value: string, for example "" or "Labyrinth01.txt") the "" or None value is used during the automatic generation of file names with a numeration, the basis is taken from the  BASIC_PART_FILENAME constant; the string value like "Labyrinth01.txt" fixes the name of txt file with the Labyrinth which will be created in the current folder;
-- **BASIC_PART_FILENAME**: (value: string, for example "Labyrinth") sets the basic part of txt and html file names with a numeration;
-- **LABYRINTH_WIDTH**: (value: number) sets the dimension of the Labyrinth width;
-- **LABYRINTH_HEIGHT**: (value: number) sets the dimension of the Labyrinth height;
-- **PROBABILITIES**: (value: set, for example [0.4, 0.6, 0, 0, 0, 0]) sets the probability of symbols from the LABYRINTH_SYMBOLS constant; this probability is used during the Labyrinth generation; the length of the PROBABILY constant must be the same as the length of LABYRINTH_SYMBOLS;
+The generate_by_random.py module allows to generate of the Labyrint by randomly distributed symbols of walls and tunnels, and the  Start and Finish position.
+
+You can control the same parameters as the tunnel generation module. 
+
+In generate_by_random.py the main generation is repeated many times so far will be created the Labyrinth with at least one solution of a certain length. You can control this with **ATTEMPTS_OF_GENARATION** and **NEEDED_TUNNEL_LENGTH** constants.
+
+The constant value can be changed for different needs before running the required module.
+
+
+# Searching
+
+You can find the solution to the Labyrinth using **BFS** (Breadth-First Search), **DFS** (Deep-First Search) or **ASS** (A* Search) Methods. Three modules are responsible for each method:
+**deep_first_search.py**
+**broad_ferst_search.py**
+**a_star_search.py**
+
+Each module reads the Labyrinth from a special txt file created using generate_by_random.py or generate_by_random.py modules or by hand. 
+The name of this special txt file you can set in **FILE_NAME** constant.
+The solution of the Labyrinth will be written in an appropriate txt file and html file (if set **CRETE_HTML** = True) and will show the path from the start point to the finish point, necessary steps, and discovered nodes.
+
+Using the **some_methods_search.py** allows finding the solution of the Labyrint consecutively by three methods DFS, BFS, ASS, and the solution will be written in one html file.
+
+After finding the solution the information will be shown in the console as the path from the start point to the finish point, the necessary steps, and discovered nodes.
+
+# Other
+
+The **util.py** module contains some service functions and constants like: 
 - **LABYRINTH_SYMBOLS**: (value: dictionary, for example {"wall":"#", "tunnel":" ", "start":"A", "finish":"B", "pass_finish":"*", "pass_all":"."} the set of symbols used during the Labyrinth generation;
 - **LABYRINTH_HTML_COLOR**: (value: dictionary, for example {"wall":"rgb(182, 180, 180)", "tunnel":"White", "start":"rgb(160, 160, 231)", "finish":"rgb(212, 159, 159)", "pass_finish":"rgb(149, 197, 149)", "pass_all":"rgb(243, 233, 156)"}) the set of colors used for html file;
 
-The constant value can be changed for different needs before running the SolveLabyrinth.py module.
+It can be changed if it is needed
 
-**The BuildLabyrintWithWay.py module**
 
-Running the BuildLabyrintWithWay.py module allows repeatedly generating the Labyrinth as long as at least one way from the start point to the finish point will be found. The BuildLabyrintWithWay.py module actively uses functions and all settings from the SolveLabyrinth.py module.
-
-# Example of usage
+# Examples of usage
 
 The folder of the Labyrinth project contains some generated samples.
 
 Examples of txt and html files of the Labyrinth like as:
 
-
-<img width="225" alt="Знімок екрана 2024-09-22 о 20 45 15" src="https://github.com/user-attachments/assets/e8c0690c-1db0-47b1-86f3-d4825cb481a4">
-
-<img width="527" alt="Знімок екрана 2024-09-22 о 20 45 49" src="https://github.com/user-attachments/assets/61217e0d-4a4d-43ba-954e-2be5cb6ebec1">
-
+<img width="506" alt="Знімок екрана 2024-09-29 о 21 29 26" src="https://github.com/user-attachments/assets/c23e1157-fa75-4dd3-bf03-412f2ac226a4">
 
 Example of the result in the console:
 
