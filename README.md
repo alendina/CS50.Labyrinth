@@ -81,7 +81,7 @@ It can be changed if it is needed
 
 # Examples of usage
 
-The folder of the Labyrinth project contains some generated samples.
+The folder Samples contains some generated samples of the Labyrinth project.
 
 Examples of txt and html files of the Labyrinth like as:
 
