@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"black-formatter.interpreter": [
+			"/opt/homebrew/bin/python3"
+		],
+		"python.defaultInterpreterPath": "/opt/homebrew/bin/python3"
+	}
+}
